@@ -27,17 +27,23 @@ const AuthInputs = () => {
           <label>Email</label>
           <input
             type="email"
-            className={emailNotValid ? 'invalid' : undefined}
-            onChange={(event) => handleInputChange('email', event.target.value)}
+            style={{
+              backgroundColor: emailNotValid ? 'red' : undefined
+            }}
+            /*className={emailNotValid ? 'invalid' : undefined}*/
+            onChange={(e) => handleInputChange('email', e.target.value)}
           />
         </p>
         <p>
           <label>Password</label>
           <input
             type="password"
-            className={passwordNotValid ? 'invalid' : undefined}
-            onChange={(event) =>
-              handleInputChange('password', event.target.value)
+            style={{
+              backgroundColor: passwordNotValid ? 'red' : '#d1d5db'
+            }}
+            /*className={passwordNotValid ? 'invalid' : undefined}*/
+            onChange={(e) =>
+              handleInputChange('password', e.target.value)
             }
           />
         </p>
