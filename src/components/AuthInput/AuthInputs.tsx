@@ -1,29 +1,8 @@
 import { useState } from 'react'
-import { styled } from 'styled-components'
 import CustomInput from '../CustomInput/CustomInput.tsx'
 import Button from '../Button/Button.tsx'
 
-const ControlDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-`
 
-
-const StyledButton = styled.button`
-  padding: 1rem 2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  border-radius: 0.25rem;
-  color: #1f2937;
-  background-color: #f0b322;
-  border: none;
-
-  &:hover {
-    background-color: #f0920e;
-  }
-`
 
 const AuthInputs = () => {
   const [enteredEmail, setEnteredEmail] = useState('')
@@ -46,13 +25,13 @@ const AuthInputs = () => {
   const passwordNotValid = submitted && enteredPassword.trim().length < 6
 
   return (
-    <div id="auth-inputs">
-      <ControlDiv>
+    <div id="auth-inputs" className="w-full mx-auto max-w-sm p-8 rounded shadow-md bg-gradient-to-b from-stone-700 to-stone-800">
+      <div className="flex flex-col gap-8 mb-6">
         <CustomInput label="Email" invalid={emailNotValid} onChange={(e) => handleInputChange('email', e.currentTarget.value)} />
         <CustomInput label="Password" invalid={passwordNotValid} onChange={(e) => handleInputChange('password', e.currentTarget.value)} />
-      </ControlDiv>
-      <div className="actions">
-        <button type="button" className="text-button">
+      </div>
+      <div className="flex justify-end gap-4">
+        <button type="button" className="text-amber-400 hover:text-amber-600">
           Create a new account
         </button>
         <Button onClick={handleLogin}>Sign In</Button>

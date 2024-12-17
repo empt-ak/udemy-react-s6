@@ -1,41 +1,17 @@
-import { styled } from 'styled-components'
 import { InputHTMLAttributes } from 'react'
 
-const Label = styled.label<{ '$invalid'?: boolean }>`
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: ${(props) => props['$invalid'] ? '#f87171' : '#6b7280'};
-`
 
-const Input = styled.input<{ '$invalid': boolean } & InputHTMLAttributes<HTMLButtonElement>>`
-  width: 100%;
-  padding: 0.75rem 1rem;
-  line-height: 1.5;
-  background-color: ${(props) => props['$invalid'] ? '#fed2d2' : '#d1d5db'};
-  color: ${(props) => props['$invalid'] ? '#ef4444' : '#374151'};
-  border: 1px solid ${(props) => props['$invalid'] ? '#f73f3f' : 'transparent'};
-  border-radius: 0.25rem;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-`
-
-interface CustomInputProps extends InputHTMLAttributes<HTMLButtonElement> {
+interface CustomInputProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string
   invalid: boolean
 }
 
-const CustomInput = ({ label, invalid, onChange }: CustomInputProps) => {
+const CustomInput = ({ label, invalid, ...props }: CustomInputProps) => {
+
   return (
     <p>
-      <Label $invalid={invalid}>{label}</Label>
-      <Input
-        type="email"
-        $invalid={invalid}
-        onChange={onChange}
-      />
+      <label className={`block mb-2 text-xs font-bold tracking-wide uppercase ${invalid ? 'text-red-400' : 'text-stone-300'}`}>{label}</label>
+      <input className={`w-full px-3 py-2 leading-tight border rounded shadow ${invalid ? 'text-red-500 bg-red-100 border-red-300' : 'bg-stone-300 text-gray-700'}`} {...props} />
     </p>
   )
 }
