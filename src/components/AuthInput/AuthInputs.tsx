@@ -23,7 +23,7 @@ const AuthInputs = () => {
   return (
     <div id="auth-inputs">
       <div className="controls">
-        <p>
+        <p className="paragraph">
           <label className={`label${emailNotValid ? ' invalid' : ''}`}>Email</label>
           <input
             type="email"
