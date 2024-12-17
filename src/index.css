@@ -36,16 +36,6 @@ button:focus {
   color: white;
 }
 
-label.invalid {
-  color: #f87171;
-}
-
-input.invalid {
-  color: #ef4444;
-  border-color: #f73f3f;
-  background-color: #fed2d2;
-}
-
 .actions {
   display: flex;
   justify-content: flex-end;
@@ -59,7 +49,6 @@ input.invalid {
   border-radius: 0.25rem;
   color: #1f2937;
   background-color: #f0b322;
-  border-radius: 6px;
   border: none;
 }
 
