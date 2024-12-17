@@ -1,5 +1,5 @@
-import Header from './components/Header.tsx';
-import AuthInputs from './components/AuthInputs.tsx';
+import Header from './components/Header/Header.tsx'
+import AuthInputs from './components/AuthInputs.tsx'
 
 const App = () => {
   return (
