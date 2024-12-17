@@ -24,24 +24,18 @@ const AuthInputs = () => {
     <div id="auth-inputs">
       <div className="controls">
         <p>
-          <label>Email</label>
+          <label className={`label${emailNotValid ? ' invalid' : ''}`}>Email</label>
           <input
             type="email"
-            style={{
-              backgroundColor: emailNotValid ? 'red' : undefined
-            }}
-            /*className={emailNotValid ? 'invalid' : undefined}*/
+            className={emailNotValid ? 'invalid' : undefined}
             onChange={(e) => handleInputChange('email', e.target.value)}
           />
         </p>
         <p>
-          <label>Password</label>
+          <label className={`label${emailNotValid ? ' invalid' : ''}`}>Password</label>
           <input
             type="password"
-            style={{
-              backgroundColor: passwordNotValid ? 'red' : '#d1d5db'
-            }}
-            /*className={passwordNotValid ? 'invalid' : undefined}*/
+            className={passwordNotValid ? 'invalid' : undefined}
             onChange={(e) =>
               handleInputChange('password', e.target.value)
             }
