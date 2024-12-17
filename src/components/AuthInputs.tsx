@@ -1,24 +1,24 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
-export default function AuthInputs() {
-  const [enteredEmail, setEnteredEmail] = useState('');
-  const [enteredPassword, setEnteredPassword] = useState('');
-  const [submitted, setSubmitted] = useState(false);
+const AuthInputs = () => {
+  const [enteredEmail, setEnteredEmail] = useState('')
+  const [enteredPassword, setEnteredPassword] = useState('')
+  const [submitted, setSubmitted] = useState(false)
 
-  function handleInputChange(identifier, value) {
+  function handleInputChange(identifier: string, value: string) {
     if (identifier === 'email') {
-      setEnteredEmail(value);
+      setEnteredEmail(value)
     } else {
-      setEnteredPassword(value);
+      setEnteredPassword(value)
     }
   }
 
   function handleLogin() {
-    setSubmitted(true);
+    setSubmitted(true)
   }
 
-  const emailNotValid = submitted && !enteredEmail.includes('@');
-  const passwordNotValid = submitted && enteredPassword.trim().length < 6;
+  const emailNotValid = submitted && !enteredEmail.includes('@')
+  const passwordNotValid = submitted && enteredPassword.trim().length < 6
 
   return (
     <div id="auth-inputs">
@@ -49,5 +49,7 @@ export default function AuthInputs() {
         <button className='button' onClick={handleLogin}>Sign In</button>
       </div>
     </div>
-  );
+  )
 }
+
+export default AuthInputs
