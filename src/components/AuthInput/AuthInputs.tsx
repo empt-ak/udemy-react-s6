@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { styled } from 'styled-components'
 import CustomInput from '../CustomInput/CustomInput.tsx'
+import Button from '../Button/Button.tsx'
 
 const ControlDiv = styled.div`
   display: flex;
@@ -54,7 +55,7 @@ const AuthInputs = () => {
         <button type="button" className="text-button">
           Create a new account
         </button>
-        <StyledButton onClick={handleLogin}>Sign In</StyledButton>
+        <Button onClick={handleLogin}>Sign In</Button>
       </div>
     </div>
   )
